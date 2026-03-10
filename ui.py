@@ -1,32 +1,37 @@
 import streamlit as st
-from rag_engine import ask_question
+from rag_engine import load_documents, ask_question
 
-st.set_page_config(page_title="College Knowledge Chatbot")
+st.set_page_config(page_title="EduRAG", layout="wide")
 
-st.title("🎓 College Knowledge Chatbot")
-st.write("Ask questions about students, teachers, and courses.")
+st.title("🎓 EduRAG: AI-powered Education Knowledge Assistant")
 
-# Create chat history
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = []
+# load knowledge only once
+@st.cache_resource
+def initialize_rag():
+    load_documents()
 
-# Input box
-question = st.text_input("Ask a question")
+initialize_rag()
 
-if st.button("Ask"):
+# chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-    if question:
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.write(msg["content"])
 
-        answer = ask_question(question)
+question = st.chat_input("Ask something about students, teachers or courses...")
 
-        # Save conversation
-        st.session_state.chat_history.append(("You", question))
-        st.session_state.chat_history.append(("Bot", answer))
+if question:
 
-# Show chat history
-for role, message in st.session_state.chat_history:
+    st.session_state.messages.append({"role": "user", "content": question})
 
-    if role == "You":
-        st.markdown(f"**🧑 You:** {message}")
-    else:
-        st.markdown(f"**🤖 Bot:** {message}")
+    with st.chat_message("user"):
+        st.write(question)
+
+    answer = ask_question(question)
+
+    st.session_state.messages.append({"role": "assistant", "content": answer})
+
+    with st.chat_message("assistant"):
+        st.write(answer)
