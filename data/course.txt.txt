@@ -1,0 +1,31 @@
+Course Name: Data Structures
+Description: This course teaches fundamental data structures such as arrays, linked lists, stacks, queues, trees, and graphs.
+Duration: 4 months
+
+Course Name: Machine Learning
+Description: This course introduces supervised and unsupervised learning algorithms including regression, classification, and clustering.
+Duration: 5 months
+
+Course Name: Web Development
+Description: This course teaches how to build websites using HTML, CSS, JavaScript, and backend technologies.
+Duration: 3 months
+
+Course Name: Artificial Intelligence
+Description: This course focuses on intelligent systems, problem solving, search algorithms, and machine learning techniques.
+Duration: 4 months
+
+Course Name: Database Management Systems
+Description: This course covers relational databases, SQL, normalization, and database design.
+Duration: 4 months
+
+Course Name: Cloud Computing
+Description: This course explains cloud services, virtualization, and cloud platforms such as AWS and Azure.
+Duration: 3 months
+
+Course Name: Deep Learning
+Description: This course covers neural networks, convolutional neural networks, and deep learning frameworks.
+Duration: 5 months
+
+Course Name: Internet of Things
+Description: This course teaches sensor integration, embedded systems, and IoT applications.
+Duration: 4 months

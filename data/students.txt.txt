@@ -1,0 +1,39 @@
+Student Name: Rahul Sharma
+Age: 20
+Course: Computer Engineering
+College: Pune District Education Association College of Engineering
+Skills: Python, C Programming, Web Development
+Hobby: Playing Cricket
+Favorite Subject: Data Structures
+
+Student Name: Ananya Patil
+Age: 21
+Course: Artificial Intelligence and Data Science
+College: MIT College of Engineering
+Skills: Machine Learning, Python, Data Analysis
+Hobby: Reading Books
+Favorite Subject: Machine Learning
+
+Student Name: Aditya Deshmukh
+Age: 22
+Course: Information Technology
+College: Vishwakarma Institute of Technology
+Skills: Java, Spring Boot, Backend Development
+Hobby: Football
+Favorite Subject: Operating Systems
+
+Student Name: Sneha Kulkarni
+Age: 20
+Course: Electronics and Telecommunication
+College: COEP Technological University
+Skills: Embedded Systems, C Programming, IoT
+Hobby: Photography
+Favorite Subject: Digital Electronics
+
+Student Name: Kunal Mehta
+Age: 23
+Course: Computer Science
+College: Symbiosis Institute of Technology
+Skills: Artificial Intelligence, Deep Learning, Python
+Hobby: Chess
+Favorite Subject: Neural Networks

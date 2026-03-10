@@ -1,0 +1,41 @@
+Teacher Name: Dr. Anjali Mehta
+Department: Computer Engineering
+Specialization: Machine Learning and Data Science
+Experience: 12 years
+Courses Taught: Machine Learning, Data Mining
+
+Teacher Name: Prof. Rajesh Kulkarni
+Department: Information Technology
+Specialization: Web Development
+Experience: 10 years
+Courses Taught: Web Technologies, Cloud Computing
+
+Teacher Name: Dr. Amit Sharma
+Department: Artificial Intelligence
+Specialization: Deep Learning and Neural Networks
+Experience: 15 years
+Courses Taught: Artificial Intelligence, Deep Learning
+
+Teacher Name: Prof. Snehal Patil
+Department: Computer Engineering
+Specialization: Data Structures and Algorithms
+Experience: 8 years
+Courses Taught: Data Structures, Algorithms
+
+Teacher Name: Dr. Neeraj Gupta
+Department: Electronics and Telecommunication
+Specialization: Embedded Systems and IoT
+Experience: 14 years
+Courses Taught: Embedded Systems, Internet of Things
+
+Teacher Name: Prof. Kavita Deshpande
+Department: Computer Science
+Specialization: Database Systems
+Experience: 11 years
+Courses Taught: Database Management Systems, Big Data
+
+Teacher Name: Dr. Rakesh Verma
+Department: Artificial Intelligence
+Specialization: Natural Language Processing
+Experience: 13 years
+Courses Taught: NLP, AI Applications
