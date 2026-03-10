@@ -27,3 +27,7 @@ The system retrieves relevant information from a knowledge base and generates re
 -Install dependencies
 -Run the Streamlit UI
 
+## Demo Screenshot
+
+![EduRAG Screenshot](https://github.com/kru2803/college-rag-chatbot/blob/main/Screenshot.png)
+
