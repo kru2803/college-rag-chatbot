@@ -3,36 +3,44 @@ from sentence_transformers import SentenceTransformer
 import ollama
 import os
 
+# load embedding model once
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
+# start chromadb
 client = chromadb.Client()
-
 collection = client.get_or_create_collection(name="knowledge")
 
-documents = []
 
-data_folder = "data"
+def load_documents():
 
-for file in os.listdir(data_folder):
-    file_path = os.path.join(data_folder, file)
+    documents = []
+    data_folder = "data"
 
-    if file.endswith(".txt"):
-        with open(file_path, "r", encoding="utf-8") as f:
-            text = f.read()
+    for file in os.listdir(data_folder):
 
-            chunks = text.split("\n\n")
+        file_path = os.path.join(data_folder, file)
 
-            for chunk in chunks:
-                documents.append(chunk)
+        if file.endswith(".txt"):
 
-for i, chunk in enumerate(documents):
-    embedding = embedding_model.encode(chunk).tolist()
+            with open(file_path, "r", encoding="utf-8") as f:
+                text = f.read()
 
-    collection.add(
-        documents=[chunk],
-        embeddings=[embedding],
-        ids=[str(i)]
-    )
+                chunks = text.split("\n\n")
+
+                for chunk in chunks:
+                    if chunk.strip():
+                        documents.append(chunk)
+
+    # insert embeddings
+    for i, chunk in enumerate(documents):
+
+        embedding = embedding_model.encode(chunk).tolist()
+
+        collection.add(
+            documents=[chunk],
+            embeddings=[embedding],
+            ids=[str(i)]
+        )
 
 
 def ask_question(question):
@@ -47,13 +55,15 @@ def ask_question(question):
     context = " ".join(results["documents"][0])
 
     prompt = f"""
-Use the context below to answer the question.
+You are EduRAG, an AI education assistant.
 
 Context:
 {context}
 
 Question:
 {question}
+
+Answer clearly based on the context.
 """
 
     response = ollama.chat(
