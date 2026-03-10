@@ -39,6 +39,7 @@ for i, chunk in enumerate(documents):
         ids=[str(i)]
     )
 print("Knowledge indexed.")
+chat_history = ""
 
 while True:
     question = input("\nAsk question: ")
@@ -62,13 +63,18 @@ while True:
     context = " ".join(results["documents"][0])
 
     prompt = f"""
-    Use the context below to answer the question.
+    You are an AI education assistant.
+
+    Chat History:
+    {chat_history}
 
     Context:
     {context}
 
     Question:
     {question}
+
+    Answer clearly based on the context.
     """
 
     response = ollama.chat(
@@ -76,4 +82,8 @@ while True:
         messages=[{"role": "user", "content": prompt}]
     )
 
-    print("Answer:", response["message"]["content"])
+    answer = response["message"]["content"]
+
+    print("Answer:", answer)
+
+    chat_history += f"\nUser: {question}\nBot: {answer}\n"
